@@ -5,10 +5,15 @@
   top: 0
   right: 0
   left: 100%
-  height: 100vh
   font-size: 1.2rem
   overflow: hidden
-  transition: all ease-in-out 700ms
+  transition: all ease-in-out 300ms
+
+  @media (min-width: 725px)
+    position: relative
+    flex: auto
+    background: none
+    left: 0
 
   &.is-open
     left: 0
@@ -19,10 +24,22 @@
     justify-content: space-around
     height: 100vh
 
+    @media (min-width: 725px)
+      flex-direction: row
+      height: auto
+      margin-top: 1em
+      margin-left: 2em
+
   li
     flex: 1 1 auto
     border: 1px solid rgba(0, 0, 0, .15)
     display: flex
+    @media (min-width: 725px)
+      border: none
+      text-transform: uppercase
+      font-size: 1rem
+      letter-spacing: 2px
+      flex-basis: auto
 
   a
     color: $text-inverse
@@ -32,14 +49,21 @@
     align-items: center
     justify-content: center
 
+    @media (min-width: 725px)
+      justify-content: flex-end
+      opacity: 0.9
+
     &:hover
       background: rgba(0, 0, 0, .15)
+
+      @media (min-width: 725px)
+        background: none
+        color: $accent
 
 
 // Hamburger menu
 
 .nav-toggle
-  border: .75px solid $accent
   padding: 1em
   display: block
   position: absolute
@@ -47,13 +71,17 @@
   right: 1em
   cursor: pointer
 
+  @media (min-width: 725px)
+    display: none
+
 .hamburger, .hamburger::before, .hamburger::after
   content: ""
+  opacity: 0.95
   display: block
   width: 2rem
   height: 3px
   background: $white
-  transition: all ease-in-out 700ms
+  transition: all ease-in-out 300ms
 
 .hamburger::before
   transform: translateY(-6px)
